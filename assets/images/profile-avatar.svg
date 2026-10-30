@@ -96,8 +96,8 @@
   <path d="M 158 150 C 155 120 180 100 200 100 C 228 100 245 120 242 150 C 235 125 210 115 195 115 C 175 115 162 130 158 150 Z" fill="#ff244f" opacity="0.8"/>
 
   <!-- HUD Overlay Details -->
-  <text x="200" y="360" font-family="'Courier New', monospace" font-size="11" fill="#38ff91" letter-spacing="4" text-anchor="middle" font-weight="bold">CHÂU TIẾN ĐẠT // DEV</text>
-  <text x="200" y="378" font-family="'Courier New', monospace" font-size="8" fill="#a3abb5" letter-spacing="2" text-anchor="middle">CORE NODE ID: #2006-IT</text>
+  <text x="200" y="360" font-family="'Be Vietnam Pro', 'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="12" fill="#38ff91" letter-spacing="2" text-anchor="middle" font-weight="700">CHÂU TIẾN ĐẠT // DEV</text>
+  <text x="200" y="378" font-family="'Fira Code', 'Courier New', monospace" font-size="8" fill="#a3abb5" letter-spacing="2" text-anchor="middle">CORE NODE ID: #2006-IT</text>
 
   <!-- Corner Brackets -->
   <path d="M 20 50 L 20 20 L 50 20" fill="none" stroke="#ff244f" stroke-width="2" />
