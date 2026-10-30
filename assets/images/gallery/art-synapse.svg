@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="artBg5" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#18131e"/>
+      <stop offset="60%" stop-color="#0c0912"/>
+      <stop offset="100%" stop-color="#050408"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="600" fill="url(#artBg5)"/>
+
+  <!-- Silicon Chip Boundary -->
+  <rect x="180" y="180" width="240" height="240" rx="16" fill="#090d14" stroke="#ff244f" stroke-width="2.5"/>
+  <rect x="200" y="200" width="200" height="200" rx="8" fill="#101722" stroke="#38ff91" stroke-width="1.5"/>
+
+  <!-- Neural Synapse Dendrites extending outward -->
+  <!-- Left Branches -->
+  <path d="M 180 220 C 130 200 90 240 40 220" fill="none" stroke="#38ff91" stroke-width="2"/>
+  <circle cx="40" cy="220" r="5" fill="#38ff91"/>
+  <path d="M 180 300 C 120 300 80 330 30 360" fill="none" stroke="#ff244f" stroke-width="2"/>
+  <circle cx="30" cy="360" r="5" fill="#ff244f"/>
+  <path d="M 180 380 C 140 400 90 420 50 460" fill="none" stroke="#38ff91" stroke-width="2"/>
+  <circle cx="50" cy="460" r="5" fill="#38ff91"/>
+
+  <!-- Right Branches -->
+  <path d="M 420 220 C 470 200 510 240 560 220" fill="none" stroke="#ff244f" stroke-width="2"/>
+  <circle cx="560" cy="220" r="5" fill="#ff244f"/>
+  <path d="M 420 300 C 480 300 520 330 570 360" fill="none" stroke="#38ff91" stroke-width="2"/>
+  <circle cx="570" cy="360" r="5" fill="#38ff91"/>
+  <path d="M 420 380 C 460 400 510 420 550 460" fill="none" stroke="#ff244f" stroke-width="2"/>
+  <circle cx="550" cy="460" r="5" fill="#ff244f"/>
+
+  <!-- Top / Bottom Branches -->
+  <path d="M 240 180 C 240 120 210 80 180 40" fill="none" stroke="#38ff91" stroke-width="2"/>
+  <circle cx="180" cy="40" r="5" fill="#38ff91"/>
+  <path d="M 360 180 C 360 120 390 80 420 40" fill="none" stroke="#ff244f" stroke-width="2"/>
+  <circle cx="420" cy="40" r="5" fill="#ff244f"/>
+  <path d="M 300 420 C 300 480 330 520 360 560" fill="none" stroke="#38ff91" stroke-width="2"/>
+  <circle cx="360" cy="560" r="5" fill="#38ff91"/>
+
+  <!-- Central Core Neurons -->
+  <circle cx="300" cy="300" r="50" fill="#06090e" stroke="#38ff91" stroke-width="2"/>
+  <circle cx="300" cy="300" r="25" fill="#8c1735" stroke="#ff244f" stroke-width="2"/>
+  <circle cx="300" cy="300" r="8" fill="#38ff91"/>
+
+  <text x="30" y="560" fill="#ff244f" font-family="'Courier New', monospace" font-size="12" letter-spacing="2">ARTWORK № 05 // SYNAPSE &amp; SILICON</text>
+  <text x="30" y="580" fill="#a3abb5" font-family="'Courier New', monospace" font-size="10">BIO-DIGITAL HYBRID • NEURAL INTERFACE CONCEPT</text>
+</svg>

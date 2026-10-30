@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Châu Tiến Đạt — IT Student, Developer & Digital Art Enthusiast. Neon Art Universe portfolio showcasing web applications, system architectures, and cyber-luxury design." />
+  <meta name="author" content="Châu Tiến Đạt" />
+  <meta name="theme-color" content="#07090b" />
+  <meta property="og:title" content="Châu Tiến Đạt — Neon Art Universe Portfolio" />
+  <meta property="og:description" content="Where Logic Meets Imagination. Cyber-luxury IT Portfolio & Creative Lab." />
+  <meta property="og:type" content="website" />
+  <title>Châu Tiến Đạt — Neon Art Universe | IT Portfolio</title>
+
+  <!-- Google Fonts: Space Grotesk, Syne, Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/animations.css" />
+</head>
+<body>
+  <!-- Canvas for Obsidian Particle & Circuit Dust -->
+  <canvas id="cyber-canvas"></canvas>
+
+  <!-- Custom Neon Cyber Cursor -->
+  <div class="custom-cursor" aria-hidden="true"></div>
+  <div class="custom-cursor-dot" aria-hidden="true"></div>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-nav" role="banner">
+    <div class="nav-container">
+      <!-- Brand & Emblem -->
+      <a href="#home" class="nav-brand" aria-label="Châu Tiến Đạt Home">
+        <div class="nav-brand-emblem rotate-on-hover">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"/>
+          </svg>
+        </div>
+        <div class="nav-brand-text">
+          CHÂU TIẾN ĐẠT<span>.DEV</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#process" class="nav-link">Process</a></li>
+          <li><a href="#art" class="nav-link">Art</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Status Indicator -->
+        <div class="status-pill" title="System Status: Fully Operational">
+          <span class="status-dot"></span>
+          <span>ONLINE</span>
+        </div>
+
+        <!-- Audio FX Toggle -->
+        <button id="audio-toggle" class="audio-toggle-btn" aria-label="Toggle synthetic sound effects" title="Sound: OFF">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Toggle Button -->
+        <button class="mobile-toggle" aria-label="Open mobile navigation menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ==========================================================================
+         HERO SECTION (ENTER THE UNIVERSE)
+         ========================================================================== -->
+    <section id="home" class="hero-section" aria-label="Hero Section">
+      <div class="container hero-grid">
+        <!-- Hero Information -->
+        <div class="hero-content reveal-on-scroll">
+          <div class="hero-telemetry">
+            <span class="hero-telemetry-badge">STATUS: ONLINE</span>
+            <span class="hero-telemetry-badge accent">CREATIVE MODE: ACTIVE</span>
+            <span class="hero-telemetry-badge">VERSION: 1.0</span>
+          </div>
+
+          <h1 class="hero-name">CHÂU TIẾN ĐẠT</h1>
+          <div class="hero-role">
+            <span>IT STUDENT</span>
+            <span style="color: var(--emerald-neon);">•</span>
+            <span>DEVELOPER</span>
+            <span style="color: var(--emerald-neon);">•</span>
+            <span>DIGITAL ART ENTHUSIAST</span>
+          </div>
+
+          <p class="hero-tagline">
+            "I build digital experiences where logic meets imagination."
+          </p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-crimson">
+              <span>EXPLORE PROJECTS</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-ghost">
+              <span>CONNECT WITH ME</span>
+            </a>
+          </div>
+
+          <div class="hero-specs-list">
+            <div class="spec-item">
+              <div class="spec-item-num">03+</div>
+              <div class="spec-item-label">Years Code &amp; Art</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-item-num">04+</div>
+              <div class="spec-item-label">Core Artifacts</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-item-num">100%</div>
+              <div class="spec-item-label">Vanilla Precision</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Centerpiece Visual: Mechanical Core -->
+        <div class="hero-visual-wrapper reveal-on-scroll delay-200">
+          <div class="hero-visual-core">
+            <!-- Outer Gear Ring (SVG) -->
+            <svg class="core-gear-outer" viewBox="0 0 400 400" fill="none">
+              <circle cx="200" cy="200" r="180" stroke="#ff244f" stroke-width="1.8" stroke-dasharray="14 8" opacity="0.7"/>
+              <circle cx="200" cy="200" r="162" stroke="#38ff91" stroke-width="1" stroke-dasharray="4 6" opacity="0.6"/>
+              <!-- Teeth -->
+              <g fill="#ff244f" opacity="0.85">
+                <rect x="194" y="6" width="12" height="18" rx="2" />
+                <rect x="194" y="376" width="12" height="18" rx="2" />
+                <rect x="6" y="194" width="18" height="12" rx="2" />
+                <rect x="376" y="194" width="18" height="12" rx="2" />
+                <g transform="rotate(45 200 200)"><rect x="194" y="6" width="12" height="18" rx="2" /><rect x="194" y="376" width="12" height="18" rx="2" /></g>
+                <g transform="rotate(-45 200 200)"><rect x="194" y="6" width="12" height="18" rx="2" /><rect x="194" y="376" width="12" height="18" rx="2" /></g>
+                <g transform="rotate(30 200 200)"><rect x="194" y="6" width="12" height="18" rx="2" /><rect x="194" y="376" width="12" height="18" rx="2" /></g>
+                <g transform="rotate(-30 200 200)"><rect x="194" y="6" width="12" height="18" rx="2" /><rect x="194" y="376" width="12" height="18" rx="2" /></g>
+                <g transform="rotate(60 200 200)"><rect x="194" y="6" width="12" height="18" rx="2" /><rect x="194" y="376" width="12" height="18" rx="2" /></g>
+                <g transform="rotate(-60 200 200)"><rect x="194" y="6" width="12" height="18" rx="2" /><rect x="194" y="376" width="12" height="18" rx="2" /></g>
+              </g>
+            </svg>
+
+            <!-- Inner Counter-Rotating Gear -->
+            <svg class="core-gear-inner" viewBox="0 0 300 300" fill="none">
+              <circle cx="150" cy="150" r="120" stroke="#38ff91" stroke-width="1.8" stroke-dasharray="10 5" opacity="0.85"/>
+              <circle cx="150" cy="150" r="100" stroke="#8c1735" stroke-width="2"/>
+              <g fill="#38ff91" opacity="0.7">
+                <rect x="145" y="16" width="10" height="16" rx="2"/>
+                <rect x="145" y="268" width="10" height="16" rx="2"/>
+                <rect x="16" y="145" width="16" height="10" rx="2"/>
+                <rect x="268" y="145" width="16" height="10" rx="2"/>
+                <g transform="rotate(60 150 150)"><rect x="145" y="16" width="10" height="16" rx="2"/><rect x="145" y="268" width="10" height="16" rx="2"/></g>
+                <g transform="rotate(-60 150 150)"><rect x="145" y="16" width="10" height="16" rx="2"/><rect x="145" y="268" width="10" height="16" rx="2"/></g>
+              </g>
+            </svg>
+
+            <!-- Glowing Centerpiece Core with HUD -->
+            <div class="core-inner-circuit">
+              <span class="core-tag">SYS_CORE</span>
+              <span class="core-symbol">⚙</span>
+              <span class="core-tag" style="color: var(--crimson-neon); font-size: 0.65rem;">ACTIVE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT SECTION (THE MIND BEHIND THE CODE)
+         ========================================================================== -->
+    <section id="about" class="about-section" aria-label="About Châu Tiến Đạt">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-meta">SECTION 02 // PROFILE</div>
+          <h2 class="section-title">THE MIND BEHIND <span class="accent-crimson">THE CODE</span></h2>
+          <p class="section-subtitle">Bridging computational engineering with artistic vision.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Portrait & HUD Card -->
+          <div class="cyber-card about-portrait-card reveal-on-scroll">
+            <div class="about-avatar-frame">
+              <img src="./assets/images/profile-avatar.svg" alt="Cybernetic illustrated portrait of Châu Tiến Đạt" width="400" height="400" />
+            </div>
+            <div class="about-hud-meta">
+              <div>LOCATION: <span>VIETNAM</span></div>
+              <div>DEV_ID: <span>#2006</span></div>
+              <div>FOCUS: <span>FULL-STACK</span></div>
+            </div>
+          </div>
+
+          <!-- Bio & Highlights -->
+          <div class="about-bio reveal-on-scroll delay-100">
+            <p class="about-text">
+              I am <strong>Châu Tiến Đạt</strong>, an IT student and aspiring developer who views code as both an engineering discipline and a canvas for imagination. My journey centers on developing robust web architectures, scalable database schemas, and clean, responsive user interfaces that leave a lasting impression.
+            </p>
+
+            <blockquote class="about-quote">
+              "I enjoy turning ideas into practical digital experiences through code, structured thinking, and visual experimentation."
+            </blockquote>
+
+            <div class="about-highlights-grid">
+              <div class="highlight-item">
+                <div class="highlight-item-header">
+                  <span class="highlight-icon">▣</span>
+                  <span class="highlight-title">Full-Stack Development</span>
+                </div>
+                <p class="highlight-desc">Building resilient PHP and JavaScript web applications with clean MVC architecture.</p>
+              </div>
+
+              <div class="highlight-item">
+                <div class="highlight-item-header">
+                  <span class="highlight-icon" style="color: var(--emerald-neon);">☷</span>
+                  <span class="highlight-title">Database Engineering</span>
+                </div>
+                <p class="highlight-desc">Relational data modeling, ACID transactions, and query optimization in MySQL.</p>
+              </div>
+
+              <div class="highlight-item">
+                <div class="highlight-item-header">
+                  <span class="highlight-icon">⌬</span>
+                  <span class="highlight-title">RESTful APIs &amp; Services</span>
+                </div>
+                <p class="highlight-desc">Structuring decoupled endpoints tested with Postman and integrated cleanly into frontends.</p>
+              </div>
+
+              <div class="highlight-item">
+                <div class="highlight-item-header">
+                  <span class="highlight-icon" style="color: var(--emerald-neon);">◈</span>
+                  <span class="highlight-title">Artistic Interface Design</span>
+                </div>
+                <p class="highlight-desc">Cyber-luxury visual direction, lightweight vector SVGs, and purposeful 60FPS motion.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+              <a href="https://github.com/chauda2006" target="_blank" rel="noopener noreferrer" class="btn btn-emerald">
+                <span>VIEW GITHUB REPO</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+              <a href="#contact" class="btn btn-ghost">
+                <span>GET IN TOUCH</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SKILLS SECTION (CORE SYSTEMS)
+         ========================================================================== -->
+    <section id="skills" class="skills-section" aria-label="Core Skills & Technologies">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-meta">SECTION 03 // CAPABILITIES</div>
+          <h2 class="section-title">CORE <span class="accent-emerald">SYSTEMS</span></h2>
+          <p class="section-subtitle">Real-world technical proficiencies categorized by role and usage.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Frontend -->
+          <div class="cyber-card skill-card reveal-on-scroll">
+            <div class="skill-card-header">
+              <div class="skill-category-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"/>
+                  <polyline points="8 6 2 12 8 18"/>
+                  <line x1="14" y1="4" x2="10" y2="20"/>
+                </svg>
+                <span>FRONTEND</span>
+              </div>
+              <span class="skill-category-tag">CLIENT ARCHITECTURE</span>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <span class="skill-name">HTML5 (Semantic &amp; Accessible)</span>
+                <span class="skill-badge badge-used">USED IN PROJECTS</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">CSS3 &amp; Responsive Layouts</span>
+                <span class="skill-badge badge-used">USED IN PROJECTS</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">JavaScript (ES6+, DOM, Fetch)</span>
+                <span class="skill-badge badge-used">USED IN PROJECTS</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Bootstrap 5 Framework</span>
+                <span class="skill-badge badge-practiced">PRACTICED</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="cyber-card skill-card reveal-on-scroll delay-100">
+            <div class="skill-card-header">
+              <div class="skill-category-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="8" x="2" y="2" rx="2" ry="2"/>
+                  <rect width="20" height="8" x="2" y="14" rx="2" ry="2"/>
+                  <line x1="6" y1="6" x2="6.01" y2="6"/>
+                  <line x1="6" y1="18" x2="6.01" y2="18"/>
+                </svg>
+                <span>BACKEND</span>
+              </div>
+              <span class="skill-category-tag">SERVER-SIDE LOGIC</span>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <span class="skill-name">PHP (Object-Oriented &amp; Procedural)</span>
+                <span class="skill-badge badge-used">USED IN PROJECTS</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">RESTful API Design</span>
+                <span class="skill-badge badge-used">USED IN PROJECTS</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Authentication &amp; Role Access</span>
+                <span class="skill-badge badge-practiced">PRACTICED</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">MVC Architectural Patterns</span>
+                <span class="skill-badge badge-practiced">PRACTICED</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Database -->
+          <div class="cyber-card skill-card reveal-on-scroll delay-200">
+            <div class="skill-card-header">
+              <div class="skill-category-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                  <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/>
+                </svg>
+                <span>DATABASE</span>
+              </div>
+              <span class="skill-category-tag">STORAGE &amp; MODELING</span>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <span class="skill-name">MySQL Database Management</span>
+                <span class="skill-badge badge-used">USED IN PROJECTS</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Relational Schema Modeling</span>
+                <span class="skill-badge badge-used">USED IN PROJECTS</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Complex SQL Joins &amp; Indexing</span>
+                <span class="skill-badge badge-practiced">PRACTICED</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">ACID Transactions</span>
+                <span class="skill-badge badge-practiced">PRACTICED</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & Workflow -->
+          <div class="cyber-card skill-card reveal-on-scroll">
+            <div class="skill-card-header">
+              <div class="skill-category-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"/>
+                </svg>
+                <span>TOOLS &amp; WORKFLOW</span>
+              </div>
+              <span class="skill-category-tag">DEV ENVIRONMENT</span>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <span class="skill-name">Git &amp; GitHub Version Control</span>
+                <span class="skill-badge badge-used">USED IN PROJECTS</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">VS Code Development Suite</span>
+                <span class="skill-badge badge-used">USED IN PROJECTS</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Postman API Testing</span>
+                <span class="skill-badge badge-used">USED IN PROJECTS</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">XAMPP &amp; Local Environments</span>
+                <span class="skill-badge badge-practiced">PRACTICED</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Creative & Design -->
+          <div class="cyber-card skill-card reveal-on-scroll delay-100">
+            <div class="skill-card-header">
+              <div class="skill-category-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                  <polyline points="2 17 12 22 22 17"/>
+                  <polyline points="2 12 12 17 22 12"/>
+                </svg>
+                <span>CREATIVE &amp; UI</span>
+              </div>
+              <span class="skill-category-tag">VISUAL STORYTELLING</span>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <span class="skill-name">UI/UX Composition &amp; Wireframing</span>
+                <span class="skill-badge badge-used">USED IN PROJECTS</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">SVG Vector Art &amp; Line Contours</span>
+                <span class="skill-badge badge-used">USED IN PROJECTS</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Cyber-Luxury Visual Systems</span>
+                <span class="skill-badge badge-practiced">PRACTICED</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">CSS Transitions &amp; Keyframe Motion</span>
+                <span class="skill-badge badge-used">USED IN PROJECTS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROJECTS SECTION (ARTIFACTS FROM MY LAB)
+         ========================================================================== -->
+    <section id="projects" class="projects-section" aria-label="Featured Projects">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-meta">SECTION 04 // LAB ARTIFACTS</div>
+          <h2 class="section-title">ARTIFACTS FROM <span class="accent-crimson">MY LAB</span></h2>
+          <p class="section-subtitle">Real-world applications engineered with purpose, performance, and craftsmanship.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="projects-filter-bar reveal-on-scroll">
+          <button class="filter-btn active" data-filter="all">ALL ARTIFACTS</button>
+          <button class="filter-btn" data-filter="web">WEB APPS</button>
+          <button class="filter-btn" data-filter="systems">SYSTEMS &amp; API</button>
+          <button class="filter-btn" data-filter="creative">CREATIVE CODE</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          <!-- Project 1: AURA BEATS -->
+          <article class="cyber-card project-card reveal-on-scroll" data-category="web">
+            <div class="project-card-image-wrap">
+              <img src="./assets/images/aura-beats-preview.svg" alt="Aura Beats online streaming interface preview" loading="lazy" />
+              <span class="project-category-badge">WEB APP</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">AURA BEATS — Music Platform</h3>
+              <div class="project-role-tag">ROLE: FULL-STACK DEVELOPER &amp; UI ARCHITECT</div>
+              <p class="project-description">
+                Online audio-streaming web platform with responsive player, continuous audio playback buffering, VIP tier access control, playlist management, and admin dashboard.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-chip">PHP</span>
+                <span class="tech-chip">MySQL</span>
+                <span class="tech-chip">Web Audio API</span>
+                <span class="tech-chip">JavaScript</span>
+                <span class="tech-chip">AJAX</span>
+              </div>
+              <div class="project-card-footer">
+                <button class="btn btn-sm btn-crimson open-case-study-btn" data-project="aura-beats">
+                  VIEW CASE STUDY
+                </button>
+                <a href="https://github.com/chauda2006/aura-beats" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost" title="GitHub Repository">
+                  CODE ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Student Event Management System -->
+          <article class="cyber-card project-card reveal-on-scroll delay-100" data-category="systems">
+            <div class="project-card-image-wrap">
+              <img src="./assets/images/student-events-preview.svg" alt="Student Event Management System dashboard preview" loading="lazy" />
+              <span class="project-category-badge">SYSTEMS &amp; API</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">Student Event Management System</h3>
+              <div class="project-role-tag">ROLE: BACKEND ARCHITECT &amp; DATABASE ENGINEER</div>
+              <p class="project-description">
+                University event administration platform featuring fast QR check-in workflows, concurrent slot locking, role-based security (Student/Organizer/Admin), and analytics reporting.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-chip">PHP REST API</span>
+                <span class="tech-chip">MySQL Transactions</span>
+                <span class="tech-chip">Bootstrap 5</span>
+                <span class="tech-chip">JavaScript</span>
+              </div>
+              <div class="project-card-footer">
+                <button class="btn btn-sm btn-crimson open-case-study-btn" data-project="student-events">
+                  VIEW CASE STUDY
+                </button>
+                <a href="https://github.com/chauda2006/student-event-management" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost" title="GitHub Repository">
+                  CODE ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Cyber-Matrix Visualizer -->
+          <article class="cyber-card project-card reveal-on-scroll delay-200" data-category="creative">
+            <div class="project-card-image-wrap">
+              <img src="./assets/images/visualizer-preview.svg" alt="Cyber-Matrix Algorithm Visualizer screen preview" loading="lazy" />
+              <span class="project-category-badge">CREATIVE CODE</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">Cyber-Matrix Algorithm Visualizer</h3>
+              <div class="project-role-tag">ROLE: FRONT-END ENGINEER &amp; VISUAL DESIGNER</div>
+              <p class="project-description">
+                Interactive 60FPS simulation engine translating complex sorting algorithms and Dijkstra shortest-path traversals into glowing cyber-matrix canvas visuals with step controls.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-chip">JavaScript (ES6+)</span>
+                <span class="tech-chip">HTML5 Canvas</span>
+                <span class="tech-chip">Data Structures</span>
+                <span class="tech-chip">CSS Custom Props</span>
+              </div>
+              <div class="project-card-footer">
+                <button class="btn btn-sm btn-crimson open-case-study-btn" data-project="algo-visualizer">
+                  VIEW CASE STUDY
+                </button>
+                <a href="https://github.com/chauda2006/cyber-matrix-visualizer" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost" title="GitHub Repository">
+                  CODE ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Neon Art Universe Core -->
+          <article class="cyber-card project-card reveal-on-scroll" data-category="creative">
+            <div class="project-card-image-wrap">
+              <img src="./assets/images/portfolio-core-preview.svg" alt="Neon Art Universe architecture blueprint preview" loading="lazy" />
+              <span class="project-category-badge">CREATIVE CODE</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">Neon Art Universe Portfolio Core</h3>
+              <div class="project-role-tag">ROLE: LEAD ARCHITECT &amp; DESIGNER</div>
+              <p class="project-description">
+                This very portfolio website, engineered with zero heavy dependencies, custom vector SVG graphics, synthesized Web Audio sound effects, and full accessibility standards.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-chip">Semantic HTML5</span>
+                <span class="tech-chip">CSS Variables</span>
+                <span class="tech-chip">Vanilla JS</span>
+                <span class="tech-chip">SVG Engineering</span>
+                <span class="tech-chip">GitHub Pages</span>
+              </div>
+              <div class="project-card-footer">
+                <button class="btn btn-sm btn-crimson open-case-study-btn" data-project="neon-universe">
+                  VIEW CASE STUDY
+                </button>
+                <a href="https://github.com/chauda2006/chauda2006.github.io" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost" title="GitHub Repository">
+                  CODE ↗
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROCESS SECTION (FROM SKETCH TO SYSTEM)
+         ========================================================================== -->
+    <section id="process" class="process-section" aria-label="Development Process">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-meta">SECTION 05 // METHODOLOGY</div>
+          <h2 class="section-title">FROM SKETCH <span class="accent-emerald">TO SYSTEM</span></h2>
+          <p class="section-subtitle">A disciplined, cyclical pipeline transforming ideas into reliable digital systems.</p>
+        </div>
+
+        <div class="process-timeline">
+          <!-- Step 1 -->
+          <div class="process-step-card reveal-on-scroll">
+            <div class="step-number">01</div>
+            <h3 class="step-title">IDEA</h3>
+            <p class="step-desc">Identifying core user problems, defining user stories, and establishing functional scopes.</p>
+            <div class="step-tools">TOOLS: Notion, Specs</div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-step-card reveal-on-scroll delay-100">
+            <div class="step-number">02</div>
+            <h3 class="step-title">DESIGN</h3>
+            <p class="step-desc">Wireframing user flows, cyber aesthetic palettes, line-art SVG motifs, and interactive states.</p>
+            <div class="step-tools">TOOLS: Figma, SVG</div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-step-card reveal-on-scroll delay-200">
+            <div class="step-number">03</div>
+            <h3 class="step-title">ARCHITECTURE</h3>
+            <p class="step-desc">Normalizing relational database schemas, drafting API endpoints, and mapping state logic.</p>
+            <div class="step-tools">TOOLS: MySQL Workbench, ERD</div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-step-card reveal-on-scroll delay-300">
+            <div class="step-number">04</div>
+            <h3 class="step-title">BUILD</h3>
+            <p class="step-desc">Clean modular coding adhering to semantic conventions, responsive CSS, and decoupled backend services.</p>
+            <div class="step-tools">TOOLS: PHP, JS, VS Code</div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="process-step-card reveal-on-scroll delay-400">
+            <div class="step-number">05</div>
+            <h3 class="step-title">TEST</h3>
+            <p class="step-desc">Cross-browser verification, Postman endpoint assertions, accessibility audits, and Lighthouse tuning.</p>
+            <div class="step-tools">TOOLS: Postman, DevTools</div>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="process-step-card reveal-on-scroll delay-500">
+            <div class="step-number">06</div>
+            <h3 class="step-title">DEPLOY</h3>
+            <p class="step-desc">Git version tagging, atomic commits, GitHub Pages hosting, and continuous live monitoring.</p>
+            <div class="step-tools">TOOLS: Git, GitHub Pages</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ART GALLERY SECTION (WHERE CODE BECOMES ART)
+         ========================================================================== -->
+    <section id="art" class="gallery-section" aria-label="Digital Art Gallery">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-meta">SECTION 06 // EXHIBITION</div>
+          <h2 class="section-title">WHERE CODE <span class="accent-crimson">BECOMES ART</span></h2>
+          <p class="section-subtitle">Visual explorations in mechanical geometry, neon line-art, and cybernetic compositions.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Art 1 -->
+          <div class="gallery-item reveal-on-scroll" data-index="0" role="button" tabindex="0" aria-label="View Cybernetic Gear Core artwork">
+            <img src="./assets/images/gallery/art-gear-core.svg" alt="Cybernetic Gear Core vector artwork" loading="lazy" />
+            <div class="gallery-overlay">
+              <h3 class="gallery-art-title">Cybernetic Gear Core</h3>
+              <p class="gallery-art-desc">Parametric Vector Synthesis // Click to Inspect</p>
+            </div>
+          </div>
+
+          <!-- Art 2 -->
+          <div class="gallery-item reveal-on-scroll delay-100" data-index="1" role="button" tabindex="0" aria-label="View Neon Crimson Drifter artwork">
+            <img src="./assets/images/gallery/art-crimson-drift.svg" alt="Neon Crimson Drifter synthwave vector art" loading="lazy" />
+            <div class="gallery-overlay">
+              <h3 class="gallery-art-title">Neon Crimson Drifter</h3>
+              <p class="gallery-art-desc">Synthwave Vector Horizon // Click to Inspect</p>
+            </div>
+          </div>
+
+          <!-- Art 3 -->
+          <div class="gallery-item reveal-on-scroll delay-200" data-index="2" role="button" tabindex="0" aria-label="View Emerald Data Stream artwork">
+            <img src="./assets/images/gallery/art-emerald-stream.svg" alt="Emerald Data Stream kinetic cipher art" loading="lazy" />
+            <div class="gallery-overlay">
+              <h3 class="gallery-art-title">Emerald Data Stream</h3>
+              <p class="gallery-art-desc">Kinetic Cipher Conduits // Click to Inspect</p>
+            </div>
+          </div>
+
+          <!-- Art 4 -->
+          <div class="gallery-item reveal-on-scroll" data-index="3" role="button" tabindex="0" aria-label="View Obsidian Labyrinth artwork">
+            <img src="./assets/images/gallery/art-blueprint.svg" alt="Obsidian Labyrinth isometric schematic" loading="lazy" />
+            <div class="gallery-overlay">
+              <h3 class="gallery-art-title">Obsidian Labyrinth</h3>
+              <p class="gallery-art-desc">Isometric Schematic // Click to Inspect</p>
+            </div>
+          </div>
+
+          <!-- Art 5 -->
+          <div class="gallery-item reveal-on-scroll delay-100" data-index="4" role="button" tabindex="0" aria-label="View Synapse & Silicon artwork">
+            <img src="./assets/images/gallery/art-synapse.svg" alt="Synapse & Silicon bio-digital hybrid art" loading="lazy" />
+            <div class="gallery-overlay">
+              <h3 class="gallery-art-title">Synapse &amp; Silicon</h3>
+              <p class="gallery-art-desc">Bio-Digital Neural Matrix // Click to Inspect</p>
+            </div>
+          </div>
+
+          <!-- Art 6 -->
+          <div class="gallery-item reveal-on-scroll delay-200" data-index="5" role="button" tabindex="0" aria-label="View Aurora Protocol artwork">
+            <img src="./assets/images/gallery/art-aurora.svg" alt="Aurora Protocol parametric crystal art" loading="lazy" />
+            <div class="gallery-overlay">
+              <h3 class="gallery-art-title">Aurora Protocol</h3>
+              <p class="gallery-art-desc">Parametric Polyhedron // Click to Inspect</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT SECTION (OPEN A CONNECTION)
+         ========================================================================== -->
+    <section id="contact" class="contact-section" aria-label="Contact and Social Connections">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-meta">SECTION 07 // TRANSMISSION</div>
+          <h2 class="section-title">OPEN A <span class="accent-emerald">CONNECTION</span></h2>
+          <p class="section-subtitle">Have an interesting project, internship opportunity, or idea? Let's build something meaningful.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Information Card -->
+          <div class="cyber-card contact-info-card reveal-on-scroll">
+            <p class="contact-prompt">
+              "Every great system begins with an open connection. Whether you want to discuss full-stack engineering, collaborate on a project, or exchange creative ideas, my terminal is open."
+            </p>
+
+            <div class="contact-method-list">
+              <!-- Location -->
+              <div class="contact-method-item">
+                <div class="contact-method-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="contact-method-details">
+                  <span class="label">LOCATION</span>
+                  <p>Vietnam (Available for Remote / Hybrid Work)</p>
+                </div>
+              </div>
+
+              <!-- GitHub -->
+              <div class="contact-method-item">
+                <div class="contact-method-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </div>
+                <div class="contact-method-details">
+                  <span class="label">GITHUB PROFILE</span>
+                  <a href="https://github.com/chauda2006" target="_blank" rel="noopener noreferrer">github.com/chauda2006 ↗</a>
+                </div>
+              </div>
+
+              <!-- Status -->
+              <div class="contact-method-item">
+                <div class="contact-method-icon" style="color: var(--emerald-neon); border-color: rgba(56, 255, 145, 0.3);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+                <div class="contact-method-details">
+                  <span class="label">CURRENT AVAILABILITY</span>
+                  <p style="color: var(--emerald-neon);">Open for Internships &amp; Junior Dev Roles</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct Form Card -->
+          <div class="cyber-card contact-form-card reveal-on-scroll delay-100">
+            <form id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="sender-name" class="form-label">IDENTIFIER / YOUR NAME *</label>
+                <input type="text" id="sender-name" class="form-input" placeholder="e.g. Alex Nguyen" required />
+              </div>
+
+              <div class="form-group">
+                <label for="sender-email" class="form-label">RETURN ADDRESS / EMAIL *</label>
+                <input type="email" id="sender-email" class="form-input" placeholder="e.g. alex@example.com" required />
+              </div>
+
+              <div class="form-group">
+                <label for="sender-subject" class="form-label">COMMUNICATION SUBJECT</label>
+                <input type="text" id="sender-subject" class="form-input" placeholder="e.g. Project Collaboration / Internship Inquiry" />
+              </div>
+
+              <div class="form-group">
+                <label for="sender-message" class="form-label">MESSAGE PAYLOAD *</label>
+                <textarea id="sender-message" class="form-textarea" placeholder="Describe your project, question, or timeline..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-emerald" style="width: 100%;">
+                <span>TRANSMIT PACKET</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+
+              <div id="form-status-msg" class="form-note" style="min-height: 20px; margin-top: 12px;"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-content">
+      <div class="footer-telemetry">
+        <div class="telemetry-item">ENGINE: <span>NEON ART UNIVERSE 1.0</span></div>
+        <div class="telemetry-item">PERFORMANCE: <span id="telemetry-fps">60 FPS</span></div>
+        <div class="telemetry-item">PALETTE: <span>CRIMSON × EMERALD × OBSIDIAN</span></div>
+        <div class="telemetry-item">STATUS: <span>OPERATIONAL</span></div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 <strong>Châu Tiến Đạt</strong>. All rights reserved. Where Logic Meets Imagination.
+        </div>
+        <button id="back-to-top" class="back-to-top-btn" aria-label="Return to top of page">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+          <span>ASCEND CORE</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       CASE STUDY DETAIL MODAL
+       ========================================================================== -->
+  <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-dialog">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close Case Study">✕</button>
+      
+      <div class="modal-header-image">
+        <img id="modal-image" src="" alt="Project header preview" />
+      </div>
+
+      <div class="modal-body">
+        <div id="modal-category" class="section-meta" style="margin-bottom: 6px;">CATEGORY</div>
+        <h3 id="modal-title" class="modal-title">Project Title</h3>
+        <div id="modal-role" class="project-role-tag" style="margin-bottom: 20px;">ROLE: DEVELOPER</div>
+
+        <h4 style="color: var(--emerald-neon); font-family: var(--font-mono); font-size: 0.9rem; margin-bottom: 8px;">OVERVIEW</h4>
+        <p id="modal-overview" style="color: var(--text-secondary); margin-bottom: 24px; line-height: 1.6;"></p>
+
+        <h4 style="color: var(--crimson-neon); font-family: var(--font-mono); font-size: 0.9rem; margin-bottom: 8px;">TECHNICAL CHALLENGE &amp; SOLUTION</h4>
+        <div style="background: rgba(255, 36, 79, 0.05); border-left: 3px solid var(--crimson-neon); padding: 14px 18px; border-radius: 0 6px 6px 0; margin-bottom: 14px;">
+          <p id="modal-challenge" style="color: var(--text-primary); font-size: 0.92rem; margin-bottom: 8px;"></p>
+          <p id="modal-solution" style="color: var(--text-secondary); font-size: 0.88rem;"></p>
+        </div>
+
+        <h4 style="color: var(--emerald-neon); font-family: var(--font-mono); font-size: 0.9rem; margin: 24px 0 10px;">KEY METRICS</h4>
+        <div id="modal-metrics" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 24px;"></div>
+
+        <h4 style="color: var(--text-primary); font-family: var(--font-mono); font-size: 0.9rem; margin-bottom: 10px;">TECHNOLOGY STACK</h4>
+        <div id="modal-tech-stack" class="project-tech-stack" style="margin-bottom: 30px;"></div>
+
+        <div style="display: flex; gap: 14px;">
+          <a id="modal-github-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-emerald">
+            <span>REPOSITORY SOURCE ↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       ART GALLERY LIGHTBOX
+       ========================================================================== -->
+  <div id="gallery-lightbox" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <div class="lightbox-dialog">
+      <button id="lightbox-close-btn" class="modal-close-btn" aria-label="Close Lightbox">✕</button>
+      
+      <div class="lightbox-img-wrap">
+        <button id="lightbox-prev-btn" class="lightbox-nav lightbox-prev" aria-label="Previous artwork">❮</button>
+        <img id="lightbox-image" src="" alt="Gallery artwork display" />
+        <button id="lightbox-next-btn" class="lightbox-nav lightbox-next" aria-label="Next artwork">❯</button>
+      </div>
+
+      <div class="lightbox-info">
+        <h3 id="lightbox-title" class="gallery-art-title" style="font-size: 1.4rem;"></h3>
+        <p id="lightbox-subtitle" class="gallery-art-desc" style="font-size: 0.95rem; margin-bottom: 6px;"></p>
+        <p id="lightbox-desc" style="color: var(--text-secondary); max-width: 650px; font-size: 0.9rem; line-height: 1.5; margin: 0 auto 10px;"></p>
+        <div id="lightbox-meta" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./js/main.js"></script>
+  <script src="./js/projects.js"></script>
+  <script src="./js/gallery.js"></script>
+</body>
+</html>

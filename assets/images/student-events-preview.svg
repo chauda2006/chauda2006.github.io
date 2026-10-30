@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07090c" />
+      <stop offset="100%" stop-color="#11161e" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161c26" />
+      <stop offset="100%" stop-color="#0f141c" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bgGrad2)" rx="16" />
+
+  <!-- App Window Container -->
+  <rect x="40" y="40" width="720" height="420" rx="12" fill="#0c1017" stroke="#1f2937" stroke-width="2" />
+  
+  <!-- Header Bar -->
+  <rect x="40" y="40" width="720" height="46" rx="12 12 0 0" fill="#141a24" />
+  <circle cx="65" cy="63" r="5" fill="#ff244f" />
+  <circle cx="85" cy="63" r="5" fill="#ffb830" opacity="0.6"/>
+  <circle cx="105" cy="63" r="5" fill="#38ff91" />
+  <text x="135" y="67" fill="#a3abb5" font-family="'Courier New', monospace" font-size="12">ems-portal://admin-v3.0 [ACADEMIC EVENT CORE]</text>
+  <rect x="630" y="52" width="110" height="22" rx="4" fill="#087a4a" />
+  <text x="685" y="67" fill="#f4f6f8" font-family="'Courier New', monospace" font-size="10" text-anchor="middle">DATABASE: OK</text>
+
+  <!-- Left Sidebar Navigation -->
+  <rect x="40" y="86" width="170" height="374" fill="#0a0d13" />
+  <line x1="210" y1="86" x2="210" y2="460" stroke="#1f2937" stroke-width="1.5" />
+  <text x="60" y="120" fill="#ff244f" font-family="'Courier New', monospace" font-size="11" font-weight="bold">SYSTEM MODULES</text>
+  <rect x="50" y="135" width="150" height="30" rx="4" fill="#1a2330" stroke="#ff244f" stroke-width="1"/>
+  <text x="65" y="154" fill="#f4f6f8" font-family="'Segoe UI', sans-serif" font-size="11">▣ Events Dashboard</text>
+  <text x="65" y="190" fill="#a3abb5" font-family="'Segoe UI', sans-serif" font-size="11">☷ Registrations (580)</text>
+  <text x="65" y="226" fill="#a3abb5" font-family="'Segoe UI', sans-serif" font-size="11">◱ QR Verification</text>
+  <text x="65" y="262" fill="#a3abb5" font-family="'Segoe UI', sans-serif" font-size="11">⌬ REST Endpoints</text>
+  <text x="65" y="298" fill="#a3abb5" font-family="'Segoe UI', sans-serif" font-size="11">⚿ Access Permissions</text>
+
+  <!-- Main Content Dashboard -->
+  <!-- Stats Row -->
+  <g transform="translate(230, 105)">
+    <!-- Metric 1 -->
+    <rect x="0" y="0" width="150" height="70" rx="6" fill="url(#cardGrad)" stroke="#ff244f" stroke-width="1.2"/>
+    <text x="15" y="25" fill="#a3abb5" font-family="'Courier New', monospace" font-size="10">TOTAL REGISTRATIONS</text>
+    <text x="15" y="55" fill="#ff244f" font-family="'Segoe UI', sans-serif" font-weight="bold" font-size="24">1,420</text>
+    <text x="105" y="52" fill="#38ff91" font-family="'Courier New', monospace" font-size="10">+28% ↑</text>
+
+    <!-- Metric 2 -->
+    <rect x="170" y="0" width="150" height="70" rx="6" fill="url(#cardGrad)" stroke="#38ff91" stroke-width="1.2"/>
+    <text x="185" y="25" fill="#a3abb5" font-family="'Courier New', monospace" font-size="10">ACTIVE SESSIONS</text>
+    <text x="185" y="55" fill="#38ff91" font-family="'Segoe UI', sans-serif" font-weight="bold" font-size="24">12</text>
+    <text x="270" y="52" fill="#38ff91" font-family="'Courier New', monospace" font-size="10">LIVE</text>
+
+    <!-- Metric 3 -->
+    <rect x="340" y="0" width="165" height="70" rx="6" fill="url(#cardGrad)" stroke="#222d3d" stroke-width="1.2"/>
+    <text x="355" y="25" fill="#a3abb5" font-family="'Courier New', monospace" font-size="10">CHECK-IN ACCURACY</text>
+    <text x="355" y="55" fill="#f4f6f8" font-family="'Segoe UI', sans-serif" font-weight="bold" font-size="24">99.8%</text>
+  </g>
+
+  <!-- Main Panel: QR Check-in & Event Table -->
+  <!-- Left subpanel: Interactive QR Code Module -->
+  <g transform="translate(230, 195)">
+    <rect x="0" y="0" width="200" height="235" rx="8" fill="#121822" stroke="#38ff91" stroke-width="1"/>
+    <text x="15" y="25" fill="#38ff91" font-family="'Courier New', monospace" font-size="11" font-weight="bold">SCANNER SIMULATOR</text>
+    
+    <!-- Stylized QR Code Wireframe -->
+    <rect x="35" y="45" width="130" height="130" fill="#07090b" stroke="#38ff91" stroke-width="1.5" rx="4"/>
+    <!-- QR Corner Targets -->
+    <rect x="45" y="55" width="30" height="30" fill="none" stroke="#ff244f" stroke-width="2"/>
+    <rect x="52" y="62" width="16" height="16" fill="#ff244f"/>
+    <rect x="125" y="55" width="30" height="30" fill="none" stroke="#38ff91" stroke-width="2"/>
+    <rect x="132" y="62" width="16" height="16" fill="#38ff91"/>
+    <rect x="45" y="135" width="30" height="30" fill="none" stroke="#38ff91" stroke-width="2"/>
+    <rect x="52" y="142" width="16" height="16" fill="#38ff91"/>
+    <!-- Matrix dots -->
+    <circle cx="100" cy="70" r="3" fill="#38ff91"/><circle cx="110" cy="70" r="3" fill="#38ff91"/>
+    <circle cx="95" cy="95" r="4" fill="#ff244f"/><circle cx="110" cy="110" r="4" fill="#38ff91"/>
+    <circle cx="130" cy="115" r="3" fill="#38ff91"/><circle cx="90" cy="130" r="3" fill="#38ff91"/>
+    <circle cx="140" cy="145" r="3" fill="#ff244f"/>
+    <!-- Laser scanner line -->
+    <line x1="35" y1="110" x2="165" y2="110" stroke="#ff244f" stroke-width="2" />
+
+    <text x="100" y="200" fill="#f4f6f8" font-family="'Courier New', monospace" font-size="10" text-anchor="middle">UID: #STU-2026-884</text>
+    <text x="100" y="218" fill="#38ff91" font-family="'Courier New', monospace" font-size="10" text-anchor="middle">✓ ATTENDANCE RECORDED</text>
+  </g>
+
+  <!-- Right subpanel: Event Table -->
+  <g transform="translate(450, 195)">
+    <rect x="0" y="0" width="285" height="235" rx="8" fill="#121822" stroke="#222d3d" stroke-width="1"/>
+    <text x="15" y="25" fill="#f4f6f8" font-family="'Segoe UI', sans-serif" font-weight="bold" font-size="12">Upcoming Academic Events</text>
+    
+    <!-- Table Header -->
+    <rect x="10" y="38" width="265" height="24" fill="#182230" rx="3"/>
+    <text x="20" y="54" fill="#a3abb5" font-family="'Courier New', monospace" font-size="10">EVENT / DATE</text>
+    <text x="170" y="54" fill="#a3abb5" font-family="'Courier New', monospace" font-size="10">CAPACITY</text>
+    <text x="240" y="54" fill="#a3abb5" font-family="'Courier New', monospace" font-size="10">ROLE</text>
+
+    <!-- Row 1 -->
+    <line x1="10" y1="95" x2="275" y2="95" stroke="#1f2937" stroke-width="1"/>
+    <text x="20" y="78" fill="#f4f6f8" font-family="'Segoe UI', sans-serif" font-weight="500" font-size="11">IT Hackathon 2026</text>
+    <text x="20" y="90" fill="#a3abb5" font-family="'Segoe UI', sans-serif" font-size="9">Nov 15 • Grand Hall A</text>
+    <text x="170" y="84" fill="#38ff91" font-family="'Courier New', monospace" font-size="11">240/250</text>
+    <rect x="235" y="72" width="35" height="16" rx="3" fill="#8c1735"/>
+    <text x="252" y="84" fill="#f4f6f8" font-family="'Courier New', monospace" font-size="8" text-anchor="middle">ADMIN</text>
+
+    <!-- Row 2 -->
+    <line x1="10" y1="145" x2="275" y2="145" stroke="#1f2937" stroke-width="1"/>
+    <text x="20" y="118" fill="#f4f6f8" font-family="'Segoe UI', sans-serif" font-weight="500" font-size="11">Cybersecurity Seminar</text>
+    <text x="20" y="130" fill="#a3abb5" font-family="'Segoe UI', sans-serif" font-size="9">Nov 22 • Virtual Lab</text>
+    <text x="170" y="124" fill="#38ff91" font-family="'Courier New', monospace" font-size="11">180/180</text>
+    <rect x="235" y="112" width="35" height="16" rx="3" fill="#087a4a"/>
+    <text x="252" y="124" fill="#f4f6f8" font-family="'Courier New', monospace" font-size="8" text-anchor="middle">MOD</text>
+
+    <!-- Row 3 -->
+    <line x1="10" y1="195" x2="275" y2="195" stroke="#1f2937" stroke-width="1"/>
+    <text x="20" y="168" fill="#f4f6f8" font-family="'Segoe UI', sans-serif" font-weight="500" font-size="11">AI in Web Engineering</text>
+    <text x="20" y="180" fill="#a3abb5" font-family="'Segoe UI', sans-serif" font-size="9">Dec 04 • Auditorium 2</text>
+    <text x="170" y="174" fill="#38ff91" font-family="'Courier New', monospace" font-size="11">95/150</text>
+    <rect x="235" y="162" width="35" height="16" rx="3" fill="#1b2430"/>
+    <text x="252" y="174" fill="#a3abb5" font-family="'Courier New', monospace" font-size="8" text-anchor="middle">USER</text>
+
+    <text x="15" y="220" fill="#38ff91" font-family="'Courier New', monospace" font-size="9">▶ MYSQL TRANSACTION ISOLATION: SERIALIZABLE</text>
+  </g>
+</svg>

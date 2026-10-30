@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="artBg1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#141c28"/>
+      <stop offset="60%" stop-color="#090d13"/>
+      <stop offset="100%" stop-color="#050709"/>
+    </radialGradient>
+    <filter id="bloomRed">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="600" fill="url(#artBg1)"/>
+
+  <!-- Background Lines -->
+  <g opacity="0.2" stroke="#38ff91" stroke-width="0.8">
+    <circle cx="300" cy="300" r="260" fill="none" stroke-dasharray="3 7"/>
+    <circle cx="300" cy="300" r="220" fill="none" stroke-dasharray="10 5"/>
+    <circle cx="300" cy="300" r="180" fill="none"/>
+  </g>
+
+  <!-- Large Gear 1 -->
+  <g transform="translate(300, 300)">
+    <!-- Rotating Ring -->
+    <circle cx="0" cy="0" r="140" fill="none" stroke="#ff244f" stroke-width="3" filter="url(#bloomRed)"/>
+    <circle cx="0" cy="0" r="115" fill="none" stroke="#38ff91" stroke-width="1.5" stroke-dasharray="15 6"/>
+    <circle cx="0" cy="0" r="85" fill="#0c1017" stroke="#ff244f" stroke-width="2"/>
+    <circle cx="0" cy="0" r="40" fill="#172230" stroke="#38ff91" stroke-width="2"/>
+    <circle cx="0" cy="0" r="16" fill="#ff244f" filter="url(#bloomRed)"/>
+
+    <!-- 12 Gear Teeth -->
+    <g fill="#ff244f">
+      <rect x="-8" y="-155" width="16" height="22" rx="3" />
+      <rect x="-8" y="133" width="16" height="22" rx="3" />
+      <rect x="-155" y="-8" width="22" height="16" rx="3" />
+      <rect x="133" y="-8" width="22" height="16" rx="3" />
+      <g transform="rotate(30)"><rect x="-8" y="-155" width="16" height="22" rx="3" /><rect x="-8" y="133" width="16" height="22" rx="3" /></g>
+      <g transform="rotate(60)"><rect x="-8" y="-155" width="16" height="22" rx="3" /><rect x="-8" y="133" width="16" height="22" rx="3" /></g>
+      <g transform="rotate(120)"><rect x="-8" y="-155" width="16" height="22" rx="3" /><rect x="-8" y="133" width="16" height="22" rx="3" /></g>
+      <g transform="rotate(150)"><rect x="-8" y="-155" width="16" height="22" rx="3" /><rect x="-8" y="133" width="16" height="22" rx="3" /></g>
+    </g>
+
+    <!-- Radiating Neon Circuit Pathways -->
+    <path d="M 0 -85 L 0 -40" stroke="#38ff91" stroke-width="2"/>
+    <path d="M 0 85 L 0 40" stroke="#38ff91" stroke-width="2"/>
+    <path d="M -85 0 L -40 0" stroke="#38ff91" stroke-width="2"/>
+    <path d="M 85 0 L 40 0" stroke="#38ff91" stroke-width="2"/>
+    
+    <path d="M -60 -60 L -30 -30" stroke="#ff244f" stroke-width="2"/>
+    <path d="M 60 60 L 30 30" stroke="#ff244f" stroke-width="2"/>
+    <path d="M -60 60 L -30 30" stroke="#ff244f" stroke-width="2"/>
+    <path d="M 60 -60 L 30 -30" stroke="#ff244f" stroke-width="2"/>
+  </g>
+
+  <!-- Technical Marks -->
+  <text x="30" y="560" fill="#38ff91" font-family="'Courier New', monospace" font-size="12" letter-spacing="2">ARTWORK № 01 // CYBERNETIC GEAR CORE</text>
+  <text x="30" y="580" fill="#a3abb5" font-family="'Courier New', monospace" font-size="10">DIGITAL VECTOR • 60 FPS PARAMETRIC SYNTHESIS</text>
+</svg>
