@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Signal Lost | Neon Art Universe</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/animations.css" />
+  <meta http-equiv="refresh" content="3; url=./" />
+  <style>
+    .error-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+    .error-code {
+      font-family: var(--font-heading);
+      font-size: clamp(4rem, 12vw, 8rem);
+      font-weight: 900;
+      color: var(--crimson-neon);
+      text-shadow: 0 0 30px var(--crimson-glow);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .error-title {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+    .error-desc {
+      color: var(--text-secondary);
+      max-width: 480px;
+      margin-bottom: 28px;
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <div class="error-code">404</div>
+    <h1 class="error-title">TRANSMISSION SEVERED // NODE NOT FOUND</h1>
+    <p class="error-desc">The requested coordinate does not exist in the Neon Art Universe. Redirecting to core terminal in 3 seconds...</p>
+    <a href="./" class="btn btn-emerald">RETURN TO CORE TERMINAL</a>
+  </div>
+</body>
+</html>
