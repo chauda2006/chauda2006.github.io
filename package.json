@@ -1,0 +1,13 @@
+{
+  "name": "chauda2006-portfolio",
+  "version": "1.0.0",
+  "description": "Neon Art Universe — IT Portfolio of Châu Tiến Đạt",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}
